@@ -1,0 +1,44 @@
+.header {
+  padding: 36px 124px;
+  border-bottom: 1px solid #ebebeb;
+  display: flex;
+  align-items: center;
+}
+
+.header .logo {
+  width: 90px;
+  margin-right: 3.75rem;
+}
+
+.nav {
+  display: flex;
+  gap: 3.75rem;
+  align-items: center;
+}
+
+.nav .nav-link {
+  color: #677510;
+  font-weight: 500;
+  line-height: 24px;
+  text-decoration: none;
+}
+
+.nav .nav-link.active {
+  color: #b5cc22;
+  font-weight: 700;
+}
+
+.header .login-button {
+  margin-left: auto;
+  width: 85px;
+  height: 40px;
+  padding: 10px 24px;
+  border-radius: 100px;
+  color: white;
+  background-color: #b5cc22;
+  outline: none;
+  border: none;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+}
