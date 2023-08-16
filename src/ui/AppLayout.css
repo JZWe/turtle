@@ -5,3 +5,7 @@
   line-height: 24px;
   font-family: 'Noto Sans TC', sans-serif;
 }
+
+.main-container {
+  padding: 32px 124px;
+}
