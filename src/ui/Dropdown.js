@@ -31,13 +31,14 @@ function Dropdown({ options, onChange, defaultLabel }) {
         <div className={!isOptionVisible ? `options` : `options visible`}>
           {!Array.isArray(options)
             ? null
-            : options.map((option) => (
+            : options.map((option, index) => (
                 <div
                   className={
                     currentOption?.value === option.value
                       ? `option active`
                       : `option`
                   }
+                  key={index}
                   onClick={() => onOptionClick(option)}
                 >
                   {option.label}
