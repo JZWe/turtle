@@ -1,4 +1,3 @@
-import { useUbikeContext } from './UbikeDataContext';
 import { useState } from 'react';
 import {
   getCoreRowModel,
@@ -6,6 +5,7 @@ import {
   useReactTable,
   flexRender,
 } from '@tanstack/react-table';
+import { useUbikeTableContext } from './UbikeTableContext';
 import './UbikeTable.css';
 
 const columns = [
@@ -36,11 +36,11 @@ const columns = [
 const emptyArray = [];
 
 export default function UbikeTable() {
-  const { ubikeData } = useUbikeContext();
+  const { data } = useUbikeTableContext();
   const [sorting, setSorting] = useState([]);
 
   const table = useReactTable({
-    data: ubikeData ?? emptyArray,
+    data: data ?? emptyArray,
     state: {
       sorting,
     },

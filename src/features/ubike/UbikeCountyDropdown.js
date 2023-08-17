@@ -1,5 +1,6 @@
 import React from 'react';
 import Dropdown from '../../ui/Dropdown';
+import { useUbikeTableContext } from './UbikeTableContext';
 
 const fakeCountyOptions = [
   { label: '台北市', value: '0' },
@@ -10,14 +11,15 @@ const fakeCountyOptions = [
 ];
 
 function UbikeCountyDropdown() {
+  const { setSelectedCounty } = useUbikeTableContext();
   return (
-    <div>
-      <Dropdown
-        defaultLabel="選擇縣市"
-        options={fakeCountyOptions}
-        onChange={console.log}
-      />
-    </div>
+    <Dropdown
+      defaultLabel="選擇縣市"
+      options={fakeCountyOptions}
+      onChange={(selectedOption) =>
+        setSelectedCounty(selectedOption?.label ?? '')
+      }
+    />
   );
 }
 

@@ -2,12 +2,12 @@ import UbikeCountyDropdown from '../features/ubike/UbikeCountyDropdown';
 import UbikePlacementSearch from '../features/ubike/UbikePlacementSearch';
 import UbikeAreaDistrict from '../features/ubike/UbikeAreaDistrict';
 import UbikeTable from '../features/ubike/UbikeTable';
-import { UbikeDataContextProvider } from '../features/ubike/UbikeDataContext';
+import { UbikeTableContextProvider } from '../features/ubike/UbikeTableContext';
 import './TablePage.css';
 
 function TablePage() {
   return (
-    <UbikeDataContextProvider>
+    <UbikeTableContextProvider>
       <div>
         <h1 className="title">站點資訊</h1>
         <div style={{ display: 'flex', gap: '1rem', marginBottom: '24px' }}>
@@ -32,7 +32,7 @@ function TablePage() {
         </div>
         <UbikeTable />
       </div>
-    </UbikeDataContextProvider>
+    </UbikeTableContextProvider>
   );
 }
 

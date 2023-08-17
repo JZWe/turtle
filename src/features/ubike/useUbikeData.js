@@ -1,8 +1,6 @@
-import { useState, useEffect, createContext, useContext } from 'react';
+import { useState, useEffect } from 'react';
 
-const UbikeDataContext = createContext(null);
-
-export function UbikeDataContextProvider({ children }) {
+function useUbikeData() {
   const [ubikeData, setUbikeData] = useState([]);
 
   useEffect(() => {
@@ -25,17 +23,7 @@ export function UbikeDataContextProvider({ children }) {
     getUbikeData();
   }, []);
 
-  return (
-    <UbikeDataContext.Provider value={{ ubikeData }}>
-      {children}
-    </UbikeDataContext.Provider>
-  );
+  return { ubikeData };
 }
 
-export function useUbikeContext() {
-  const context = useContext(UbikeDataContext);
-  if (context == null) {
-    throw new Error('UbikeDataContextProvider was not found');
-  }
-  return context;
-}
+export default useUbikeData;
