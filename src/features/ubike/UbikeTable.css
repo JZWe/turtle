@@ -1,0 +1,33 @@
+.ubike-table {
+  width: 100%;
+}
+
+.ubike-table th {
+  color: #ffffff;
+  background-color: #b5cc22;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  padding: 1rem;
+}
+
+.ubike-table th:first-child {
+  border-radius: 28px 0 0 0;
+}
+
+.ubike-table th:last-child {
+  border-radius: 0 28px 0 0;
+}
+
+.ubike-table td {
+  text-align: center;
+  padding: 1.4rem;
+}
+
+.ubike-table tr:nth-child(even) {
+  background-color: #f6f6f6;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

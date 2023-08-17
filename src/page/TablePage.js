@@ -1,7 +1,8 @@
 import UbikeCountyDropdown from '../features/ubike/UbikeCountyDropdown';
 import UbikePlacementSearch from '../features/ubike/UbikePlacementSearch';
-import { UbikeDataContextProvider } from '../features/ubike/UbikeDataContext';
 import UbikeAreaDistrict from '../features/ubike/UbikeAreaDistrict';
+import UbikeTable from '../features/ubike/UbikeTable';
+import { UbikeDataContextProvider } from '../features/ubike/UbikeDataContext';
 import './TablePage.css';
 
 function TablePage() {
@@ -13,7 +14,15 @@ function TablePage() {
           <UbikeCountyDropdown />
           <UbikePlacementSearch />
         </div>
-        <div style={{ paddingLeft: '10px', display: 'flex', gap: '10rem' }}>
+        <div
+          style={{
+            paddingLeft: '10px',
+            display: 'flex',
+            gap: '10rem',
+            marginBottom: '2rem',
+            justifyContent: 'space-between',
+          }}
+        >
           <div style={{ width: '480px' }}>
             <UbikeAreaDistrict />
           </div>
@@ -21,6 +30,7 @@ function TablePage() {
             <img src="/icons/ride.svg" alt="ride" />
           </div>
         </div>
+        <UbikeTable />
       </div>
     </UbikeDataContextProvider>
   );
