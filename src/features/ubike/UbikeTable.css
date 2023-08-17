@@ -31,3 +31,32 @@
 .cursor-pointer {
   cursor: pointer;
 }
+
+@media screen and (max-width: 800px) {
+  .ubike-table th {
+    font-size: 16px;
+  }
+
+  .ubike-table th:first-child {
+    border-radius: 8px 0 0 0;
+  }
+
+  .ubike-table th:nth-child(n + 4) {
+    display: none;
+  }
+
+  .ubike-table th:nth-child(n + 3) {
+    border-radius: 0 8px 0 0;
+    width: 50%;
+  }
+
+  .ubike-tab le tr td:nth-child(n + 4) {
+    display: none;
+  }
+
+  .ubike-table td {
+    text-align: center;
+    padding: 1rem;
+    font-size: 14px;
+  }
+}

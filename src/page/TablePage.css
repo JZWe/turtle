@@ -7,3 +7,35 @@
   color: #b5cc22;
   margin-bottom: 2rem;
 }
+
+.county-placement {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 24px;
+}
+
+.district-ride {
+  padding-left: 10px;
+  display: flex;
+  margin-bottom: 2rem;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1150px) {
+  .ride-icon {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .county-placement {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .title {
+    font-size: 18px;
+  }
+}

@@ -9,3 +9,13 @@
 .main-container {
   padding: 32px 124px;
 }
+
+@media screen and (max-width: 800px) {
+  .app-layout {
+    font-size: 16px;
+  }
+
+  .main-container {
+    padding: 1.5rem 2rem;
+  }
+}

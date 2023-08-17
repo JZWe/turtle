@@ -1,12 +1,20 @@
-import React from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Header.css';
 
 function Header() {
+  const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
+
   return (
     <div className="header">
       <img src="/icons/ubike.png" className="logo" alt="ubike-logo" />
-      <nav className="nav">
+      <button
+        className={
+          isMobileNavVisible ? `hamburger-button active` : `hamburger-button`
+        }
+        onClick={() => setIsMobileNavVisible((prevState) => !prevState)}
+      ></button>
+      <nav className={isMobileNavVisible ? `nav show` : `nav`}>
         <NavLink
           to="instruction"
           className={({ isActive }) =>
@@ -47,8 +55,8 @@ function Header() {
         >
           活動專區
         </NavLink>
+        <button className="login-button">登入</button>
       </nav>
-      <button className="login-button">登入</button>
     </div>
   );
 }

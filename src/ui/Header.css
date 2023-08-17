@@ -20,6 +20,7 @@
   color: #677510;
   font-weight: 500;
   line-height: 24px;
+  font-size: 18px;
   text-decoration: none;
 }
 
@@ -41,4 +42,109 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 20px;
+}
+
+.hamburger-button {
+  display: none;
+}
+
+@media screen and (max-width: 1150px) {
+  .nav .nav-link:first-child {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1010px) {
+  .nav .nav-link:nth-child(5) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .nav .nav-link:nth-child(2) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .header {
+    padding: 36px 32px;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .nav .nav-link:nth-child(4) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header .logo {
+    margin-right: 0;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .hamburger-button {
+    display: block;
+    width: 18px;
+    height: 12px;
+    background-image: url('../../public/icons/hamburger-menu.svg');
+    background-repeat: no-repeat;
+    outline: none;
+    border: none;
+    background-color: white;
+  }
+
+  .hamburger-button.active {
+    background-image: url('../../public/icons/hamburger-menu-close.svg');
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+  }
+
+  .nav.show {
+    display: flex;
+    position: absolute;
+    width: 100vw;
+    top: 100px;
+    left: 0;
+    height: calc(100vh - 103px);
+    background-color: #b5cc22;
+    color: white;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: 10000;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 2rem;
+  }
+
+  .nav.show .nav-link {
+    color: #ffffff;
+    letter-spacing: 0.18rem;
+    font-size: 18px;
+    display: block;
+  }
+
+  .nav .nav-link.active {
+    color: #677510;
+  }
+
+  .nav .login-button {
+    margin-left: 0;
+    width: 81px;
+    height: 40px;
+    background-color: #ffffff;
+    color: #b5cc22;
+    margin-top: auto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    text-align: center;
+  }
 }
