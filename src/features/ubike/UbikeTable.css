@@ -50,7 +50,7 @@
     width: 50%;
   }
 
-  .ubike-tab le tr td:nth-child(n + 4) {
+  .ubike-table tr td:nth-child(n + 4) {
     display: none;
   }
 
