@@ -10,11 +10,13 @@ export function UbikeTableContextProvider({ children }) {
   const [currentPlacement, setCurrentPlacement] = useState('');
 
   const data = ubikeData.filter((item) => {
-    return selectedAreas.find((area) => item.area === area) &&
+    return (
+      selectedAreas.find((area) => item.area === area) &&
       item.county === selectedCounty &&
-      currentPlacement.trim === ''
-      ? true
-      : item.placement.includes(currentPlacement.trim());
+      (currentPlacement.trim === ''
+        ? true
+        : item.placement.includes(currentPlacement.trim()))
+    );
   });
 
   return (
