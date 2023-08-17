@@ -5,11 +5,11 @@ import Checkbox from './Checkbox';
 function CheckboxGroup({ hasAllChecked = false, onGroupChange, labels = [] }) {
   const initialState = labels.map((label, index) => ({
     label,
-    checked: false,
+    checked: hasAllChecked,
     id: index,
   }));
   const [checkedList, setCheckedList] = useState(initialState);
-  const [isAllChecked, setIsAllChecked] = useState(false);
+  const [isAllChecked, setIsAllChecked] = useState(true);
 
   if (hasAllChecked) {
     return (
@@ -43,17 +43,19 @@ function CheckboxGroup({ hasAllChecked = false, onGroupChange, labels = [] }) {
               id={index}
               key={index}
               label={label}
-              checked={isAllChecked ? true : checkedList[index].checked}
+              checked={checkedList[index].checked}
               onChange={(isChecked, id) => {
                 let nextCheckedList = checkedList.map((item, innerIndex) => ({
-                  label,
+                  label: item.label,
                   checked: item.id === id ? isChecked : item.checked,
                   id: innerIndex,
                 }));
                 setCheckedList(nextCheckedList);
                 onGroupChange?.(nextCheckedList);
-                if (nextCheckedList.every((item) => !item.checked)) {
+                if (!nextCheckedList.every((item) => item.checked)) {
                   setIsAllChecked(false);
+                } else if (nextCheckedList.every((item) => item.checked)) {
+                  setIsAllChecked(true);
                 }
               }}
             />
