@@ -70,6 +70,7 @@
   padding: 1rem;
   margin-top: 49px;
   position: absolute;
+  z-index: 999;
 }
 
 .searched-item {

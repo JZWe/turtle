@@ -14,7 +14,7 @@ function Dropdown({ options, onChange, defaultLabel }) {
   };
 
   useEffect(() => {
-    onChange(currentOption?.value ?? null);
+    onChange(currentOption ?? null);
   }, [currentOption, onChange]);
 
   return (
