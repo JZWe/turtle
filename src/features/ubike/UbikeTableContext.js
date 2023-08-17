@@ -7,12 +7,14 @@ export function UbikeTableContextProvider({ children }) {
   const { ubikeData } = useUbikeData();
   const [selectedCounty, setSelectedCounty] = useState(null);
   const [selectedAreas, setSelectedAreas] = useState([]);
+  const [currentPlacement, setCurrentPlacement] = useState('');
 
   const data = ubikeData.filter((item) => {
-    return (
-      selectedAreas.find((area) => item.area === area) &&
-      item.county === selectedCounty
-    );
+    return selectedAreas.find((area) => item.area === area) &&
+      item.county === selectedCounty &&
+      currentPlacement.trim === ''
+      ? true
+      : item.placement.includes(currentPlacement.trim());
   });
 
   return (
@@ -22,6 +24,8 @@ export function UbikeTableContextProvider({ children }) {
         setSelectedAreas,
         selectedCounty,
         setSelectedCounty,
+        currentPlacement,
+        setCurrentPlacement,
         data,
       }}
     >

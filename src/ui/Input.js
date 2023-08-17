@@ -9,10 +9,12 @@ function Input({ options, onChange, defaultLabel, placeholder }) {
   const onInputChange = (e) => {
     setCurrentText(e.target.value);
     setTimeout(() => {
-      if (e.target.value.trim() === '') return;
-
+      onChange(e.target.value);
+      if (e.target.value.trim() === '') {
+        return;
+      }
       setSearchedItems((prevItems) => {
-        if (!prevItems.find((item) => item === e.target.value)) {
+        if (!prevItems.find((item) => item === e.target.value.trim())) {
           return [e.target.value, ...prevItems];
         } else {
           return [...prevItems];
