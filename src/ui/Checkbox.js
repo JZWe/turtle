@@ -18,7 +18,7 @@ function Checkbox({ label, checked, onChange, id }) {
 
   return (
     <label className="container">
-      <span onClick={() => onClickHandler(id)}>{label}</span>
+      <span>{label}</span>
       <input
         onClick={() => onClickHandler(id)}
         type="checkbox"
